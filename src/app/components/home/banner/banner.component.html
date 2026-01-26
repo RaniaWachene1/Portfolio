@@ -1,0 +1,132 @@
+<section class="section banner">
+    
+    <!-- Animated Background Elements -->
+    <div class="banner-background">
+        <div class="bg-gradient gradient-1"></div>
+        <div class="bg-gradient gradient-2"></div>
+        <div class="bg-gradient gradient-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="banner-content">
+            
+            <!-- Left Side - Text Content -->
+            <div class="banner-text" data-aos="fade-right" data-aos-duration="1000">
+                
+                <!-- Pre-title -->
+                <div class="banner-pretitle">
+                    <span class="pretitle-line"></span>
+                    <h1>{{"Banner.Pretitle" | translate}}</h1>
+                </div>
+
+                <!-- Main Title -->
+                <div class="banner-title">
+                    <h2 class="banner-name">
+                        <span class="name-text">Rania Wachene</span>
+                        <span class="name-dot">.</span>
+                    </h2>
+                    <h3 class="banner-subtitle">
+                        <span class="subtitle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </span>
+                        IT Engineer
+                    </h3>
+                </div>
+
+                <!-- Description -->
+                <div class="banner-description">
+                    <p [innerHTML]='"Banner.Description" | translate'></p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="banner-actions">
+                    <app-dynamic-button
+                        [text]='"Banner.ActionBtn" | translate'
+                        href="mailto:rania.wachene@esprit.tn"
+                        target="_blank"
+                        analyticsEvent="click_send_mail"
+                        analyticsCategory="banner"
+                        analyticsLabel="email"
+                        variant="primary">
+                    </app-dynamic-button>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://github.com/raniawachene" 
+                           target="_blank" 
+                           class="social-link"
+                           (click)="analyticsService.sendAnalyticEvent('click_github', 'banner', 'github')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rania-wachene" 
+                           target="_blank" 
+                           class="social-link"
+                           (click)="analyticsService.sendAnalyticEvent('click_linkedin', 'banner', 'linkedin')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span class="scroll-text">Scroll Down</span>
+                </div>
+
+            </div>
+
+            <!-- Right Side - Image -->
+            <div class="banner-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="image-wrapper">
+                    
+                    <!-- Decorative Elements -->
+                    <div class="image-decoration decoration-1"></div>
+                    <div class="image-decoration decoration-2"></div>
+                    
+                    <!-- Main Image Container -->
+                    <div class="image-container">
+                        <div class="image-frame">
+                            <img src="assets/images/mypic.png" alt="Rania Wachene" class="profile-image">
+                            <div class="image-glow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Stats/Tags -->
+                    <div class="floating-tag tag-1" data-aos="fade-up" data-aos-delay="800">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                        <span>Cloud & DevOps</span>
+                    </div>
+
+                    <div class="floating-tag tag-2" data-aos="fade-up" data-aos-delay="1000">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                        <span>CI/CD Expert</span>
+                    </div>
+
+                    <div class="floating-tag tag-3" data-aos="fade-up" data-aos-delay="1200">
+                        <div class="status-dot"></div>
+                        <span>Available for opportunities</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>

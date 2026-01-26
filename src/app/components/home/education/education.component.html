@@ -1,0 +1,89 @@
+<section class="education-section" id="education">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header" @fadeInUp>
+      <div class="header-content">
+        <span class="section-number">03.</span>
+        <h2 class="section-title">{{ 'Education.Title' | translate }}</h2>
+        <div class="title-line"></div>
+      </div>
+    </div>
+
+    <!-- Education Timeline -->
+    <div class="education-timeline">
+      <!-- Timeline Line -->
+      <div class="timeline-line"></div>
+
+      <!-- Education Items -->
+      <div *ngFor="let degree of 'Education.Degrees' | translate; let i = index" 
+           class="education-item"
+           [class.left]="isLeft(i)"
+           [class.right]="!isLeft(i)"
+           @fadeInUp
+           (mouseenter)="setActive(i)"
+           (mouseleave)="clearActive()">
+        
+        <div class="item-wrapper">
+          <!-- Content Side -->
+          <div class="content-side">
+            <div class="education-card" [class.active]="activeIndex === i">
+              <!-- Gradient Overlay -->
+              <div class="gradient-overlay"></div>
+
+              <div class="card-content">
+                <!-- Date Badge -->
+                <div class="date-badge">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>{{ degree.Date }}</span>
+                </div>
+
+                <!-- Degree -->
+                <h3 class="degree-title">{{ degree.Degree }}</h3>
+
+                <!-- School -->
+                <h4 class="school-name">{{ degree.School }}</h4>
+
+                <!-- Specialization -->
+                <p class="specialization">{{ degree.Specialization }}</p>
+
+                <!-- Achievements -->
+                <div class="achievements" *ngIf="degree.Description && degree.Description.length > 0">
+                  <div *ngFor="let desc of degree.Description" class="achievement-item">
+                    <i class="fas fa-award"></i>
+                    <span>{{ desc }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Decorative Corner -->
+              <div class="decorative-corner"></div>
+            </div>
+          </div>
+
+          <!-- Timeline Dot -->
+          <div class="timeline-dot" [class.active]="activeIndex === i">
+            <div class="dot-ping" *ngIf="activeIndex === i"></div>
+          </div>
+
+          <!-- Image Side -->
+          <div class="image-side">
+            <div class="image-wrapper" [class.active]="activeIndex === i">
+              <img [src]="getImage(i)" [alt]="degree.School" class="edu-image">
+              <div class="image-overlay"></div>
+              <div class="image-border"></div>
+              
+              <!-- Icon Badge -->
+              <div class="icon-badge">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="decorative-blur blur-1"></div>
+    <div class="decorative-blur blur-2"></div>
+  </div>
+</section>

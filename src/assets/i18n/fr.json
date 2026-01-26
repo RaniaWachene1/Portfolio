@@ -1,0 +1,589 @@
+{
+  "Header.Item1": "À propos",
+  "Header.Item2": "Expérience",
+  "Header.Item3": "Projets",
+  "Header.Item4": "Contact",
+  "Header.Item5": "Éducation",
+  "Header.Item6": "Langues",
+  "Header.cvBtn": "CV",
+  "Header.cvName": "CV_Rania_Wachene_Francais.pdf",
+  "Loading": "Chargement...",
+
+  "Banner.Pretitle": "Bonjour ! Je m'appelle",
+  "Banner.Description": "Je suis une <span class='underline'>Ingénieure Cloud et DevOps</span> expérimentée en <span class='underline'>CI/CD, DevOps/DevSecOps</span> et environnements Agile. Je suis passionnée par la création d'applications évolutives et sécurisées, l'automatisation, le monitoring robuste et les pratiques SRE.",
+  "Banner.ActionBtn": "Dire Bonjour",
+
+  "AboutMe.Title": "À propos de Rania",
+  "AboutMe.Paragraphs": [
+    "Je suis une <span class='underline'>Ingénieure IT</span> spécialisée en Cloud et DevOps, avec une solide expérience en CI/CD, DevOps/DevSecOps et environnements Agile.",
+    "Je suis passionnée par la construction d'applications évolutives et sécurisées, tout en mettant en œuvre l'automatisation, un monitoring robuste et les pratiques de Site Reliability Engineering (SRE) pour garantir une haute disponibilité et performance des systèmes.",
+    "<span class='underline'> Voici quelques-unes des technologies avec lesquelles j'ai travaillé intensivement :</span>"
+  ],
+
+  "Experience.Title": "Expérience",
+  "Experience.Jobs": [
+    {
+      "Tab": "Kromberg & Schubert",
+      "Title": "Stagiaire Ingénieur IT",
+      "Date": "Jan 2025 - Août 2025",
+      "Description": [
+        "Conception et développement d'une plateforme RH numérique centralisée pour automatiser les flux administratifs de plus de 8 000 employés",
+        "Mise en œuvre d'un pipeline CI/CD DevSecOps sécurisé avec tests automatisés, analyse de vulnérabilités et déploiement continu",
+        "Automatisation de l'approvisionnement de l'infrastructure cloud via Terraform et gestion de configuration via Ansible",
+        "Mise en place d'un monitoring centralisé pour les serveurs et les pods Kubernetes avec Prometheus et Grafana"
+      ],
+      "Technologies": [
+        "Spring Boot", "Angular", "Bootstrap", "Flask", "MySQL",
+        "Jenkins", "GitHub", "Maven", "Docker", "Helm",
+        "Azure", "Azure Kubernetes Service (AKS)", "Azure Container Registry (ACR)",
+        "Azure Blob Storage", "Azure Key Vault", "Azure SQL / MySQL Database",
+        "Terraform", "Ansible",
+        "Prometheus", "Grafana",
+        "SonarQube", "Trivy", "OWASP Dependency-Check", "OWASP ZAP",
+        "Checkov", "GitLeaks", "JUnit", "Mockito"
+      ],
+      "overview": {
+        "description": "Architecture et déploiement d'une plateforme de digitalisation RH complète conçue pour automatiser les flux administratifs critiques. Le projet a transformé les processus RH manuels en un écosystème cloud-native évolutif et sécurisé."
+      },
+      "keyMetrics": [
+        { "value": "8 000+", "label": "Employés Actifs", "icon": "users" },
+        { "value": "40%", "label": "Réduction temps de traitement", "icon": "trending-down" },
+        { "value": "99.9%", "label": "Disponibilité Plateforme", "icon": "activity" }
+      ],
+      "contributions": [
+        {
+          "title": "CI/CD Sécurisé (DevSecOps)",
+          "description": "Conception d'un pipeline CI/CD axé sur la sécurité couvrant les analyses statiques, dynamiques, de dépendances, de conteneurs, d'infrastructure et de secrets.",
+          "icon": "shield",
+          "highlights": [
+            "Pipeline Jenkins multi-étapes avec portes de qualité automatisées",
+            "SAST via SonarQube pour la qualité du code et la détection de vulnérabilités",
+            "Analyse des dépendances avec OWASP Dependency-Check",
+            "Analyse d'images de conteneurs avec Trivy",
+            "Analyse de sécurité IaC avec Checkov",
+            "Détection de secrets avec GitLeaks",
+            "DAST via OWASP ZAP"
+          ]
+        },
+        {
+          "title": "Automatisation Infrastructure & Configuration",
+          "description": "Automatisation du provisionnement de l'infrastructure et de la configuration du système via l'Infrastructure as Code.",
+          "icon": "settings",
+          "highlights": [
+            "Provisionnement Cloud et Kubernetes avec Terraform",
+            "Gestion de configuration automatisée avec Ansible",
+            "Environnements cohérents, répétables et auditables"
+          ]
+        },
+        {
+          "title": "Orchestration & Monitoring Cloud-Native",
+          "description": "Déploiement et surveillance d'applications conteneurisées sur Azure Kubernetes Service avec observabilité totale.",
+          "icon": "cloud",
+          "highlights": [
+            "Déploiement en production sur AKS",
+            "Collecte de métriques via Prometheus",
+            "Tableaux de bord Grafana pour le monitoring, les alertes et l'analyse de performance",
+            "Détection proactive d'incidents"
+          ]
+        },
+        {
+          "title": "Modules Fonctionnels RH",
+          "description": "Conception et implémentation des modules RH de base pour numériser les processus administratifs.",
+          "icon": "layers",
+          "highlights": [
+            "Authentification RBAC et gestion des utilisateurs",
+            "Flux de demandes d'avances sur salaire",
+            "Modules de formation et recrutement interne",
+            "Flux de validation des attestations RH",
+            "Système de gestion des congés",
+            "Gestion des photos de badges",
+            "Flux de contre-visites médicales"
+          ]
+        }
+      ],
+      "results": [
+        "Réduction de 40% de la charge administrative RH grâce à l'automatisation",
+        "Réduction significative de l'usage du papier, alignée sur les objectifs ISO et de durabilité",
+        "Réduction du temps d'intégration (onboarding) de 10 jours à quelques minutes",
+        "Amélioration de la fiabilité des déploiements via l'IaC",
+        "Haute disponibilité et sécurité de niveau entreprise via l'architecture cloud-native"
+      ]
+    },
+    {
+      "Tab": "DataDoIt",
+      "Title": "Stagiaire Ingénieur IT",
+      "Date": "Juil 2024 - Sept 2024",
+      "Description": [
+        "Architecture d'une plateforme automatisée de gestion de l'empreinte carbone pour surveiller les émissions de CO2 (Scopes 1, 2 et 3)",
+        "Ingénierie d'un pipeline CI/CD haute disponibilité et d'une suite analytique Power BI en temps réel"
+      ],
+      "Technologies": [
+        "Angular", "Spring Boot", "MySQL", "Docker", "Jenkins", "Nexus",
+        "Azure", "Power BI", "SonarQube", "Trivy", "Kubernetes", "Prometheus", "Grafana"
+      ],
+      "overview": {
+        "description": "Développement d'une solution GreenTech de bout en bout pour digitaliser le suivi carbone, transformant les données brutes en informations exploitables."
+      },
+      "keyMetrics": [
+        { "value": "30%", "label": "Réduction Impact CO2", "icon": "leaf" },
+        { "value": "85%", "label": "Précision du Suivi", "icon": "target" },
+        { "value": "60%", "label": "Reporting plus rapide", "icon": "clock" }
+      ],
+      "contributions": [
+        {
+          "title": "Pipeline DevSecOps Automatisé",
+          "description": "Mise en place d'un pipeline de livraison moderne assurant la livraison continue de fonctionnalités.",
+          "icon": "terminal",
+          "highlights": [
+            "Orchestration CI/CD via Jenkins",
+            "Gestion des artefacts avec Nexus",
+            "Analyse de sécurité avec SonarQube et Trivy",
+            "Conteneurisation basée sur Docker"
+          ]
+        }
+      ],
+      "results": [
+        "Digitalisation du suivi carbone pour plus de 50 sites industriels",
+        "Amélioration de 85% de la précision des données",
+        "Automatisation de 60% du reporting réglementaire et de durabilité"
+      ]
+    },
+    {
+      "Tab": "DataDoIt",
+      "Title": "Stagiaire Ingénieur IT",
+      "Date": "Juil 2023 - Sept 2023",
+      "Overview": {
+        "Description": "Développement d'une plateforme d'analyse et d'aide à la décision en temps réel transformant les données de caméras IA en indicateurs clés de performance (KPI)."
+      },
+      "Description": [
+        "Conception d'un système d'aide à la décision basé sur l'IA utilisant la vision par ordinateur pour l'optimisation opérationnelle.",
+        "Construction d'un pipeline d'ingestion de données scalable sur AWS pour traiter la télémétrie des caméras intelligentes.",
+        "Développement de services backend RESTful et d'un frontend interactif pour la visualisation analytique.",
+        "Mise en œuvre de déploiements conteneurisés et de pipelines CI/CD cloud-native.",
+        "Application des meilleures pratiques DevSecOps (tests de sécurité et qualité automatisés)."
+      ],
+      "Technologies": [
+        "Spring Boot", "Angular", "Bootstrap", "MongoDB",
+        "Jenkins", "GitHub", "Maven", "Docker", "Helm",
+        "AWS", "Terraform", "Ansible",
+        "Prometheus", "Grafana",
+        "SonarQube", "Trivy", "OWASP Dependency-Check", "OWASP ZAP",
+        "Checkov", "GitLeaks", "JUnit", "Mockito"
+      ],
+      "Modules": [
+        {
+          "Title": "Authentification & Autorisation",
+          "Description": "Accès administrateur sécurisé avec authentification basée sur les rôles.",
+          "Icon": "lock"
+        },
+        {
+          "Title": "Tableaux de bord temps réel",
+          "Description": "Visualisation de la fréquentation, de l'occupation et des KPI de performance.",
+          "Icon": "layers"
+        },
+        {
+          "Title": "Couche de gestion de données",
+          "Description": "Ingestion et stockage à haut débit de la télémétrie des caméras.",
+          "Icon": "database"
+        },
+        {
+          "Title": "Monitoring & Observabilité",
+          "Description": "Visibilité complète sur la santé, la performance et la disponibilité du système.",
+          "Icon": "eye"
+        }
+      ],
+      "KeyMetrics": [
+        { "Value": "60%", "Label": "Efficacité Opérationnelle", "Icon": "trending-up" },
+        { "Value": "100%", "Label": "Visibilité Temps Réel", "Icon": "eye" },
+        { "Value": "Zéro", "Label": "Latence de Données", "Icon": "zap" },
+        { "Value": "99.9%", "Label": "Disponibilité Plateforme", "Icon": "server" }
+      ],
+      "Results": [
+        "Amélioration de la prise de décision opérationnelle via l'IA.",
+        "Élimination du reporting manuel grâce aux pipelines automatisés.",
+        "Augmentation de la fiabilité via l'IaC et l'orchestration de conteneurs.",
+        "Livraison d'un système sécurisé prêt pour la production selon les standards DevSecOps."
+      ]
+    },
+    {
+      "Tab": "Kromberg & Schubert",
+      "Title": "Stagiaire Ingénieur IT",
+      "Date": "Jan 2022 - Juin 2022",
+      "Overview": {
+        "Description": "Développement d'une plateforme centralisée de gestion des ressources IT offrant une visibilité en temps réel sur les actifs, licences et fournisseurs."
+      },
+      "Description": [
+        "Ingénierie d'une plateforme de gestion des ressources IT pour centraliser les données d'actifs, licences et fournisseurs.",
+        "Conception de tableaux de bord interactifs pour les actifs IT, les coûts et les mesures d'utilisation.",
+        "Projet classé dans le Top 10 des projets de fin d'études avec un prix d'excellence technique."
+      ],
+      "Technologies": [
+        "Angular", "Spring Boot", "Java", "MySQL", 
+        "Docker", "Power BI", "Talend"
+      ],
+      "Modules": [
+        {
+          "Title": "Gestion des Actifs & Licences",
+          "Description": "Suivi et gestion centralisés de tous les actifs informatiques et licences logicielles.",
+          "Icon": "database"
+        },
+        {
+          "Title": "Tableaux de Bord en Temps Réel",
+          "Description": "Visualisation des métriques clés (utilisation, coûts, conformité).",
+          "Icon": "layers"
+        },
+        {
+          "Title": "Gestion des Fournisseurs",
+          "Description": "Suivi des informations fournisseurs pour optimiser les achats et contrats.",
+          "Icon": "users"
+        }
+      ],
+      "KeyMetrics": [
+        { "Value": "Top 10", "Label": "Classement du Projet", "Icon": "award" },
+        { "Value": "35%", "Label": "Optimisation Ressources", "Icon": "trending-up" },
+        { "Value": "20%", "Label": "Réduction des Coûts", "Icon": "dollar-sign" }
+      ],
+      "Results": [
+        "Optimisation de l'utilisation des ressources IT de 35%.",
+        "Réduction des coûts opérationnels IT de 20% via une meilleure visibilité.",
+        "Amélioration de la prise de décision grâce à l'analytique en temps réel.",
+        "Établissement d'une source unique de vérité pour l'inventaire IT."
+      ]
+    }
+  ],
+
+  "Education": {
+    "Title": "Éducation",
+    "Degrees": [
+      {
+        "School": "École Supérieure Privée d'Ingénierie et de Technologie (ESPRIT)",
+        "Degree": "Diplôme d'Ingénieur en Informatique",
+        "Specialization": "Cloud Computing & DevOps",
+        "Date": "2020 - 2025",
+        "Description": [
+          "Diplômée avec mention"
+        ]
+      },
+      {
+        "School": "Faculté des Sciences Juridiques, Économiques et de Gestion (FSJEGJ)",
+        "Degree": "Licence",
+        "Specialization": "Business Intelligence",
+        "Date": "2019 - 2020",
+        "Description": [
+          "Diplômée avec mention, classée parmi les meilleurs étudiants"
+        ]
+      },
+      {
+        "School": "Lycée Omar Kalchani",
+        "Degree": "Baccalauréat",
+        "Specialization": "Sciences",
+        "Date": "2019",
+        "Description": []
+      }
+    ]
+  },
+
+  "Languages.Title": "Langues",
+  "Languages.Items": [
+    {
+      "Language": "Arabe",
+      "Level": "Natif",
+      "Proficiency": 100
+    },
+    {
+      "Language": "Français",
+      "Level": "Avancé",
+      "Phroficiency": 85
+    },
+    {
+      "Language": "Anglais",
+      "Level": "Avancé",
+      "Proficiency": 85
+    }
+  ],
+
+  "FeatureProjects.Title": "Projets Phares",
+  "FeatureProjects.Label": "Projet Mis en Avant",
+  "FeatureProjects.Projects": [
+    {
+      "Title": "SnowMountain",
+      "Description": "Plateforme de gestion de ski avec un pipeline CI/CD DevSecOps entièrement automatisé intégrant sécurité et orchestration cloud.",
+      "imgs": [
+        "assets/images/SnowMountain/snow1.jpg",
+        "assets/images/SnowMountain/snow2.jpg",
+        "assets/images/SnowMountain/snow3.jpg",
+        "assets/images/SnowMountain/snow4.jpg",
+        "assets/images/SnowMountain/snow5.jpg"
+      ],
+      "Technologies": [
+        "Spring Boot", "Angular", "MySQL", "Docker", "Jenkins", "Kubernetes",
+        "Trivy", "SonarQube", "Terraform", "Azure", "Prometheus", "Grafana"
+      ],
+      "ghLink": "",
+      "demoLink": "",
+      "keyMetrics": [
+        { "value": "70%", "label": "Déploiements plus rapides" },
+        { "value": "99.9%", "label": "Disponibilité" },
+        { "value": "11", "label": "Microservices" }
+      ],
+      "overview": {
+        "description": "Développée comme projet académique à ESPRIT, cette plateforme utilise 11 microservices déployés sur Azure Kubernetes Service (AKS)."
+      },
+      "technicalStack": {
+        "Backend": ["Spring Boot", "MySQL", "Maven"],
+        "Frontend": ["Angular"],
+        "DevOps & CI/CD": ["Jenkins", "Docker", "Kubernetes", "Terraform"],
+        "Security": ["SonarQube", "Trivy", "OWASP", "GitLeaks"],
+        "Monitoring": ["Prometheus", "Grafana"],
+        "Cloud": ["Azure Kubernetes Service (AKS)", "Docker Hub", "Nexus"]
+      },
+      "pipelineFeatures": [
+        {
+          "title": "Gestion du Code & CI",
+          "description": "Intégration GitHub avec automatisation Jenkins pour les builds, tests et déploiements.",
+          "highlights": [
+            "Scans GitLeaks pour les fuites de données sensibles",
+            "Builds Maven automatisés avec tests JUnit et Mockito",
+            "Flux de travail collaboratif et revue de code en temps réel"
+          ]
+        },
+        {
+          "title": "Qualité du Code & Sécurité",
+          "description": "Analyse de sécurité multi-couches garantissant un code prêt pour la production.",
+          "highlights": [
+            "SonarQube pour l'analyse de qualité",
+            "OWASP Dependency Check pour les vulnérabilités de dépendances",
+            "Trivy pour la sécurité des conteneurs",
+            "Portes de sécurité automatisées dans le pipeline CI/CD"
+          ]
+        },
+        {
+          "title": "Conteneurisation & Orchestration",
+          "description": "Architecture cloud-native avec déploiement Kubernetes.",
+          "highlights": [
+            "Conteneurisation Docker de tous les microservices",
+            "Terraform pour le provisionnement sur Azure AKS",
+            "Docker Compose pour les tests d'intégration multi-conteneurs",
+            "Auto-scaling et haute disponibilité"
+          ]
+        },
+        {
+          "title": "Monitoring & Observabilité",
+          "description": "Stack de monitoring complète pour des analyses en temps réel.",
+          "highlights": [
+            "Collecte de métriques Prometheus sur tous les services",
+            "Tableaux de bord Grafana pour la performance",
+            "Notifications email automatisées pour les événements du pipeline",
+            "Alertes en temps réel sur la santé du système"
+          ]
+        }
+      ],
+      "results": [
+        "Réduction du temps de déploiement de 70% via CI/CD",
+        "Disponibilité de 99,9% pendant les pics de trafic",
+        "Microservices sécurisés avec zéro incident de sécurité",
+        "Amélioration de 60% de l'efficacité de l'équipe"
+      ]
+    },
+    {
+      "Title": "Elife Center",
+      "Description": "Plateforme eCommerce avec pipeline CI/CD DevOps automatisé intégrant le développement full-stack, la conteneurisation et le monitoring.",
+      "imgs": [
+        "assets/images/elife/1.jpg",
+        "assets/images/elife/2.jpg"
+      ],
+      "Technologies": [
+        "Spring Boot", "Angular", "MySQL", "Docker", "Kubernetes", "Jenkins",
+        "SonarQube", "Trivy", "Nexus", "Azure", "Prometheus", "Grafana"
+      ],
+      "ghLink": "",
+      "demoLink": "",
+      "keyMetrics": [
+        { "value": "100%", "label": "Automatisation" },
+        { "value": "50%", "label": "Releases plus rapides" },
+        { "value": "Azure", "label": "Plateforme Cloud" }
+      ],
+      "overview": {
+        "description": "Développé avec Spring Boot et Angular, déployé sur Microsoft Azure pour une performance scalable avec monitoring complet."
+      },
+      "technicalStack": {
+        "Backend": ["Spring Boot", "MySQL", "Maven"],
+        "Frontend": ["Angular"],
+        "DevOps & CI/CD": ["Jenkins", "Docker", "Kubernetes"],
+        "Security": ["SonarQube", "Trivy", "Kubeaudit"],
+        "Artifact Management": ["Nexus Repository"],
+        "Monitoring": ["Prometheus", "Grafana"],
+        "Cloud": ["Microsoft Azure"]
+      },
+      "pipelineFeatures": [
+        {
+          "title": "CI/CD Continu",
+          "description": "Automatisation Jenkins pour des builds et déploiements fluides.",
+          "highlights": [
+            "Builds et tests Maven automatisés",
+            "Déploiement continu sur le cloud Azure",
+            "Notifications email du statut du pipeline",
+            "Rollback automatisé en cas d'échec"
+          ]
+        },
+        {
+          "title": "Sécurité & Qualité",
+          "description": "Contrôles intégrés tout au long du pipeline.",
+          "highlights": [
+            "Analyse de code SonarQube",
+            "Scan de vulnérabilités Trivy",
+            "Audit de sécurité Kubernetes avec Kubeaudit",
+            "Vérifications de conformité automatisées"
+          ]
+        },
+        {
+          "title": "Architecture Cloud-Native",
+          "description": "Orchestration Kubernetes sur Azure pour la scalabilité.",
+          "highlights": [
+            "Conteneurisation Docker",
+            "Kubernetes pour l'orchestration",
+            "Nexus pour le versionnage des artefacts",
+            "Auto-scaling basé sur le trafic"
+          ]
+        }
+      ],
+      "results": [
+        "Livraison rapide de fonctionnalités via CI/CD automatisé",
+        "Fiabilité améliorée grâce au cloud Azure",
+        "Qualité de code et sécurité renforcées",
+        "Développement accéléré par l'intégration du pipeline"
+      ]
+    },
+    {
+      "Title": "MicroCommerce",
+      "Description": "Plateforme eCommerce basée sur les microservices avec un pipeline DevOps sécurisé pour 11 services.",
+      "imgs": [
+        "assets/images/MicroCommerce/1.jpg",
+        "assets/images/MicroCommerce/2.jpg",
+        "assets/images/MicroCommerce/3.jpg",
+        "assets/images/MicroCommerce/4.jpg",
+        "assets/images/MicroCommerce/5.jpg"
+      ],
+      "Technologies": [
+        "Spring Boot", "Gradle", "Docker", "Kubernetes", "Jenkins",
+        "Trivy", "SonarQube", "OWASP", "Nexus", "Prometheus", "Grafana"
+      ],
+      "ghLink": "",
+      "demoLink": "",
+      "keyMetrics": [
+        { "value": "11", "label": "Microservices" },
+        { "value": "70%", "label": "Temps gagné" },
+        { "value": "99.9%", "label": "Disponibilité" }
+      ],
+      "overview": {
+        "description": "Architecture microservices cloud-native développée avec Gradle et Spring Boot, déployée sur Kubernetes."
+      },
+      "technicalStack": {
+        "Backend": ["Spring Boot", "Gradle"],
+        "DevOps & CI/CD": ["Jenkins", "Docker", "Kubernetes"],
+        "Security": ["SonarQube", "OWASP Dependency-Check", "Trivy"],
+        "Artifact Management": ["Nexus Repository"],
+        "Monitoring": ["Prometheus", "Grafana"],
+        "Version Control": ["GitHub"]
+      },
+      "pipelineFeatures": [
+        {
+          "title": "CI/CD Microservices",
+          "description": "Pipeline automatisé pour 11 microservices indépendants.",
+          "highlights": [
+            "Automatisation Jenkins pour tous les services",
+            "Automatisation des builds basée sur Gradle",
+            "Déploiement et versionnage indépendant",
+            "Exécution parallèle des pipelines pour plus de rapidité"
+          ]
+        },
+        {
+          "title": "Approche Security-First",
+          "description": "Scanning de sécurité multi-couches à chaque étape.",
+          "highlights": [
+            "SonarQube pour les standards de qualité",
+            "OWASP pour les vulnérabilités de dépendances",
+            "Trivy pour la sécurité des conteneurs",
+            "Blocage des déploiements vulnérables"
+          ]
+        }
+      ],
+      "results": [
+        "Temps de déploiement réduit de 70%",
+        "Gestion des pics de trafic avec 99,9% de disponibilité",
+        "Architecture microservices sécurisée et scalable",
+        "Collaboration d'équipe accélérée via DevOps"
+      ]
+    },
+    {
+      "Title": "EspritCollab",
+      "Description": "Plateforme de collaboration étudiante avec intégration multi-services, monitoring temps réel et gestion d'événements.",
+      "imgs": ["assets/images/image.png"],
+      "Technologies": [
+        "Spring Boot", "Angular", "MySQL", "Docker", "Kubernetes",
+        "OpenStack", "Azure", "Power BI", "Prometheus", "Grafana"
+      ],
+      "ghLink": "",
+      "demoLink": "",
+      "keyMetrics": [
+        { "value": "Privé", "label": "Infrastructure Cloud" },
+        { "value": "100%", "label": "Suivi Temps Réel" },
+        { "value": "Multi", "label": "Intégration Services" }
+      ],
+      "overview": {
+        "description": "Déployé sur infrastructure cloud privée OpenStack avec monitoring complet et analytique."
+      },
+      "technicalStack": {
+        "Backend": ["Spring Boot", "MySQL"],
+        "Frontend": ["Angular"],
+        "DevOps": ["Docker", "Kubernetes"],
+        "Cloud Infrastructure": ["OpenStack", "Azure"],
+        "Analytics": ["Power BI"],
+        "Monitoring": ["Prometheus", "Grafana"]
+      },
+      "pipelineFeatures": [
+        {
+          "title": "Déploiement Cloud Privé",
+          "description": "Construit sur OpenStack pour la souveraineté des données.",
+          "highlights": [
+            "Architecture cloud privé sur OpenStack",
+            "Déploiement sur site (on-premises) sécurisé",
+            "Intégration cloud hybride avec Azure",
+            "Contrôle total sur l'infrastructure"
+          ]
+        },
+        {
+          "title": "Analytique Temps Réel",
+          "description": "Tableaux de bord Power BI pour les insights administratifs.",
+          "highlights": [
+            "Tableaux de bord Power BI interactifs",
+            "Suivi des progrès des étudiants",
+            "Analytique de gestion d'événements",
+            "Prise de décision basée sur les données"
+          ]
+        }
+      ],
+      "results": [
+        "Collaboration efficace avec suivi temps réel",
+        "Haute disponibilité via le cloud privé",
+        "Insights opérationnels améliorés par les métriques",
+        "Plateforme sécurisée pour l'intégration de services"
+      ]
+    }
+  ],
+
+  "OtherProjects.Title": "Autres Projets",
+  "OtherProjects.Projects": [
+    {
+      "Title": "MyArt",
+      "Description": "Galerie d'art en ligne avec versions web, desktop et mobile, offrant une expérience utilisateur fluide sur toutes les plateformes.",
+      "imgs": ["assets/images/myart1.png"],
+      "Technologies": ["Symfony 5", "Java", "JavaFX", "Codename One", "MySQL"]
+    }
+  ],
+
+  "Contact.Pretitle": "Et maintenant ?",
+  "Contact.Title": "Dites Bonjour !",
+  "Contact.Content": "Je serais ravie d'échanger avec vous sur de nouvelles opportunités. Écrivez-moi et je vous répondrai dès que possible.",
+  "Contact.Btn": "Contactez-moi"
+}

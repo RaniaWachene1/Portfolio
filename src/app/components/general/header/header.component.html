@@ -1,0 +1,107 @@
+<nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition > 0'>
+    <div class="container">
+        <a class="navbar-brand text-light" [routerLink]="'inicio'">
+            <img src='assets/images/logo3.png' width='25' alt="Logo" />
+        </a>
+
+        <ul ngbNav #nav="ngbNav" class="menu-ul">
+            <li *ngFor="let item of [
+                { id: '01.', key: 'Header.Item1', anchor: 'about', event: 'click_about' },
+                { id: '02.', key: 'Header.Item2', anchor: 'jobs', event: 'click_experience' },
+                { id: '03.', key: 'Header.Item5', anchor: 'education', event: 'click_education' },
+                { id: '04.', key: 'Header.Item6', anchor: 'languages', event: 'click_languages' },
+                { id: '05.', key: 'Header.Item3', anchor: 'proyects', event: 'click_jobs' },
+                { id: '06.', key: 'Header.Item4', anchor: 'contact', event: 'click_contact' }
+            ]" ngbNavItem (click)='analyticsService.sendAnalyticEvent(item.event, "menu", "click")'>
+                <a ngbNavLink (click)='scroll(item.anchor)'>
+                    <span class='nav-number'>{{item.id}} </span> 
+                    <span class="underline nav-text">{{item.key | translate}}</span>
+                </a>
+            </li>
+
+            <li ngbNavItem>
+                <app-dynamic-button
+                    [text]="'Header.cvBtn' | translate"
+                    (buttonClick)="downloadCV()"
+                    variant="primary"
+                    size="small"
+                    analyticsEvent="click_cv"
+                    analyticsCategory="menu"
+                    analyticsLabel="cv_download">
+                </app-dynamic-button>
+            </li>
+
+            <li>
+                <div ngbDropdown class="d-inline-block">
+                    <div class="language-container" id="dropdownForm1" ngbDropdownToggle>
+                        <ng-container *ngIf="languageFormControl.value === 'en'">
+                            <img width="20px" src="https://www.worldometers.info/img/flags/us-flag.gif" alt="English Flag">
+                            <span class="flag-text">English</span>
+                        </ng-container>
+                        <ng-container *ngIf="languageFormControl.value === 'fr'">
+                            <img width="20px" src="https://www.worldometers.info/img/flags/fr-flag.gif" alt="French Flag">
+                            <span class="flag-text">French</span>
+                        </ng-container>
+                        <svg class='arrow-language' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                        </svg>
+                    </div>
+
+                    <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                        <button ngbDropdownItem (click)='changeLanguage("en")' [class.active]='languageFormControl.value == "en"' class="language-container-selector">
+                            <img width="20px" src="https://www.worldometers.info/img/flags/us-flag.gif" alt="English">
+                            <span class="flag-text">English</span>
+                            <i *ngIf="languageFormControl.value == 'en'" class="bi bi-check2 arrow-active"></i>
+                        </button>
+                        <button ngbDropdownItem (click)='changeLanguage("fr")' [class.active]='languageFormControl.value == "fr"' class="language-container-selector">
+                            <img width="20px" src="https://www.worldometers.info/img/flags/fr-flag.gif" alt="French">
+                            <span class="flag-text">Français</span>
+                            <i *ngIf="languageFormControl.value == 'fr'" class="bi bi-check2 arrow-active"></i>
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="menu-wrapper">
+            <div [class.animate]='responsiveMenuVisible' (click)='responsiveMenuVisible = !responsiveMenuVisible' class="hamburger-menu"></div>
+        </div>
+
+        <div class="menu-responsive" [ngStyle]="{'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
+            <aside [class.aside-show]='responsiveMenuVisible' class="on-top">
+                <nav>
+                    <ol>
+                        <li *ngFor="let item of [
+                            { id: '01.', key: 'Header.Item1', anchor: 'about' },
+                            { id: '02.', key: 'Header.Item2', anchor: 'jobs' },
+                            { id: '03.', key: 'Header.Item5', anchor: 'education' },
+                            { id: '04.', key: 'Header.Item6', anchor: 'languages' },
+                            { id: '05.', key: 'Header.Item3', anchor: 'proyects' },
+                            { id: '06.', key: 'Header.Item4', anchor: 'contact' }
+                        ]" (click)="responsiveMenuVisible = false">
+                            <a (click)='scroll(item.anchor)'>
+                                <span>{{item.id}} </span> {{item.key | translate}}
+                            </a>
+                        </li>
+                        
+                        <li class="mt-3">
+                            <app-dynamic-button
+                                [text]="'Header.cvBtn' | translate"
+                                (buttonClick)="downloadCV()"
+                                variant="primary"
+                                size="small">
+                            </app-dynamic-button>
+                        </li>
+
+                        <li class="mobile-languages">
+                            <div class="d-flex justify-content-center gap-3 mt-4">
+                                <span (click)="changeLanguage('en')" [class.active-lang]="languageFormControl.value === 'en'">EN</span>
+                                <span (click)="changeLanguage('fr')" [class.active-lang]="languageFormControl.value === 'fr'">FR</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</nav>

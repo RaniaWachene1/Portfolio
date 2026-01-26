@@ -1,0 +1,150 @@
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-container">
+      
+      <!-- Animated Background Elements -->
+      <div class="contact-bg-decoration">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <!-- Content Wrapper -->
+      <div class="contact-content">
+        
+        <!-- Section Number -->
+        <div class="contact-number" data-animate="fadeInDown" data-animate-duration="800">
+          <span class="number-dot"></span>
+          <span class="number-text">06.</span>
+        </div>
+
+        <!-- Pre-title -->
+        <h3 class="contact-pre-title" 
+            data-animate="fadeInDown" 
+            data-animate-duration="1000"
+            data-animate-delay="200">
+          {{ "Contact.Pretitle" | translate }}
+        </h3>
+
+        <!-- Main Title -->
+        <h1 class="contact-title"
+            data-animate="typewriter"
+            data-animate-delay="600">
+          {{ "Contact.Title" | translate }}
+        </h1>
+
+        <!-- Description -->
+        <p class="contact-description"
+           data-animate="morphIn"
+           data-animate-duration="1200"
+           data-animate-delay="1500">
+          {{ "Contact.Content" | translate }}
+        </p>
+
+        <!-- Contact Methods -->
+        <div class="contact-methods"
+             data-animate="fadeInUp"
+             data-animate-duration="1000"
+             data-animate-delay="2000">
+          
+          <!-- Email -->
+          <a href="mailto:rania.wachene@esprit.tn" 
+             class="contact-method"
+             (click)="analyticsService.sendAnalyticEvent('click_email', 'contact', 'email')">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="method-content">
+              <span class="method-label">Email</span>
+              <span class="method-value">rania.wacheneesprit.tn</span>
+            </div>
+            <div class="method-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- LinkedIn (Optional) -->
+          <a href="https://www.linkedin.com/in/raniawachene1/" 
+             target="_blank"
+             class="contact-method"
+             (click)="analyticsService.sendAnalyticEvent('click_linkedin', 'contact', 'linkedin')">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <div class="method-content">
+              <span class="method-label">LinkedIn</span>
+              <span class="method-value">Connect with me</span>
+            </div>
+            <div class="method-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- GitHub (Optional) -->
+          <a href="https://github.com/RaniaWachene1" 
+             target="_blank"
+             class="contact-method"
+             (click)="analyticsService.sendAnalyticEvent('click_github', 'contact', 'github')">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </div>
+            <div class="method-content">
+              <span class="method-label">GitHub</span>
+              <span class="method-value">View my work</span>
+            </div>
+            <div class="method-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- CTA Button -->
+        <div class="contact-cta"
+             data-animate="scaleIn"
+             data-animate-duration="800"
+             data-animate-delay="2500">
+          <app-dynamic-button
+            [text]='"Contact.Btn" | translate'
+            href="mailto:rania.wachene@esprit.tn"
+            target="_blank"
+            analyticsEvent="click_send_mail"
+            analyticsCategory="contact"
+            analyticsLabel="email"
+            variant="primary"
+            size="large">
+          </app-dynamic-button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator"
+             data-animate="fadeIn"
+             data-animate-duration="1000"
+             data-animate-delay="3000">
+          <span class="scroll-text">That's all folks!</span>
+          <div class="scroll-line"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

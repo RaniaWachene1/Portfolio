@@ -1,0 +1,399 @@
+@use "./../../../../variables" as *;
+
+.education-section {
+  min-height: 100vh;
+  background: $Navy;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  // Section Header
+  .section-header {
+    margin-bottom: 120px;
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-number {
+      color: $Green;
+      font-family: $CodeFont;
+      font-size: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(40px, 8vw, 60px);
+      font-weight: 700;
+      color: $LightestSlate;
+      margin: 0;
+    }
+
+    .title-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #233554, transparent);
+      margin-left: 32px;
+    }
+  }
+
+  // Timeline
+  .education-timeline {
+    position: relative;
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, $Green, $Green, transparent);
+      transform: translateX(-50%);
+      
+      @media (max-width: 768px) {
+        left: 20px;
+      }
+    }
+  }
+
+  // Education Item
+  .education-item {
+    position: relative;
+    margin-bottom: 150px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+
+      @media (max-width: 768px) {
+        gap: 0;
+        padding-left: 60px;
+      }
+    }
+
+    &.left .item-wrapper {
+      flex-direction: row;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    &.right .item-wrapper {
+      flex-direction: row-reverse;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    &.left .content-side {
+      text-align: right;
+      padding-right: 48px;
+      
+      @media (max-width: 768px) {
+        text-align: left;
+        padding-right: 0;
+      }
+    }
+
+    &.right .content-side {
+      text-align: left;
+      padding-left: 48px;
+      
+      @media (max-width: 768px) {
+        padding-left: 0;
+      }
+    }
+
+    .content-side, .image-side {
+      flex: 1;
+    }
+  }
+
+  // Education Card
+  .education-card {
+    background: $LightNavy;
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid #233554;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover, &.active {
+      border-color: $Green;
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(100, 255, 218, 0.2);
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(100, 255, 218, 0.05), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    &:hover .gradient-overlay,
+    &.active .gradient-overlay {
+      opacity: 1;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .date-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: $Navy;
+      border-radius: 50px;
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      margin-bottom: 16px;
+
+      i {
+        color: $Green;
+        font-size: 14px;
+      }
+
+      span {
+        font-family: $CodeFont;
+        font-size: 14px;
+        color: $Green;
+      }
+    }
+
+    .degree-title {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      color: $LightestSlate;
+      margin-bottom: 12px;
+      transition: color 0.3s ease;
+    }
+
+    &:hover .degree-title,
+    &.active .degree-title {
+      color: $Green;
+    }
+
+    .school-name {
+      font-size: 18px;
+      color: $Green;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .specialization {
+      color: $Slate;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .achievements {
+      margin-top: 16px;
+
+      .achievement-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 8px;
+
+        i {
+          color: $Green;
+          font-size: 14px;
+          margin-top: 4px;
+          flex-shrink: 0;
+        }
+
+        span {
+          color: $Slate;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .decorative-corner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), transparent);
+      border-radius: 0 0 0 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    &:hover .decorative-corner,
+    &.active .decorative-corner {
+      opacity: 1;
+    }
+  }
+
+  // Timeline Dot
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: $Green;
+    border: 4px solid $Navy;
+    border-radius: 50%;
+    z-index: 20;
+    transition: all 0.5s ease;
+
+    @media (max-width: 768px) {
+      left: 20px;
+    }
+
+    &.active {
+      transform: translate(-50%, -50%) scale(1.5);
+      box-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+    }
+
+    .dot-ping {
+      position: absolute;
+      inset: 0;
+      background: $Green;
+      border-radius: 50%;
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+      opacity: 0.2;
+    }
+  }
+
+  // Image Wrapper
+  .image-side {
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 24px;
+    }
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .edu-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: brightness(0.9);
+    }
+
+    &:hover .edu-image,
+    &.active .edu-image {
+      transform: scale(1.1);
+      filter: brightness(1.1);
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: $Green;
+      mix-blend-mode: multiply;
+      opacity: 0.3;
+      transition: opacity 0.5s ease;
+    }
+
+    &:hover .image-overlay,
+    &.active .image-overlay {
+      opacity: 0;
+    }
+
+    .image-border {
+      position: absolute;
+      inset: 0;
+      border: 2px solid $Green;
+      border-radius: 12px;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    &:hover .image-border,
+    &.active .image-border {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .icon-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 64px;
+      height: 64px;
+      background: $Green;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s ease;
+
+      i {
+        color: $Navy;
+        font-size: 28px;
+      }
+    }
+
+    &:hover .icon-badge,
+    &.active .icon-badge {
+      transform: scale(1.1) rotate(12deg);
+    }
+  }
+
+  // Decorative Blurs
+  .decorative-blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    opacity: 0.5;
+
+    &.blur-1 {
+      top: 100px;
+      right: 50px;
+      width: 300px;
+      height: 300px;
+      background: rgba(100, 255, 218, 0.05);
+    }
+
+    &.blur-2 {
+      bottom: 100px;
+      left: 50px;
+      width: 400px;
+      height: 400px;
+      background: rgba(100, 255, 218, 0.05);
+    }
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,363 @@
+// languages.component.scss
+@use "./../../../../variables" as *;
+
+.languages-section {
+  min-height: 100vh;
+  background: $Navy;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  // Section Header
+  .section-header {
+    margin-bottom: 80px;
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-number {
+      color: $Green;
+      font-family: $CodeFont;
+      font-size: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(40px, 8vw, 60px);
+      font-weight: 700;
+      color: $LightestSlate;
+      margin: 0;
+    }
+
+    .title-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #233554, transparent);
+      margin-left: 32px;
+    }
+  }
+
+  // Languages Grid
+  .languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  // Language Card
+  .language-card {
+    position: relative;
+    cursor: pointer;
+    
+    &:hover .card-glow,
+    &.active .card-glow {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    &:hover .card-inner,
+    &.active .card-inner {
+      transform: translateY(-8px);
+      border-color: $Green;
+    }
+
+    &:hover .card-border,
+    &.active .card-border {
+      opacity: 1;
+    }
+
+    &:hover .language-icon,
+    &.active .language-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    &:hover .circle-progress,
+    &.active .circle-progress {
+      filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.6));
+    }
+
+    &:hover .particle,
+    &.active .particle {
+      opacity: 1;
+    }
+  }
+
+  // Card Glow
+  .card-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle at center, rgba(100, 255, 218, 0.15), transparent 70%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    border-radius: 24px;
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
+  // Card Inner
+  .card-inner {
+    position: relative;
+    background: $LightNavy;
+    border-radius: 16px;
+    padding: 40px 32px;
+    border: 1px solid #233554;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  // Card Border
+  .card-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid $Green;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  // Language Icon
+  .language-icon {
+    text-align: center;
+    margin-bottom: 24px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .flag-emoji {
+      font-size: 64px;
+      display: inline-block;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  // Language Header
+  .language-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .language-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: $LightestSlate;
+    margin: 0 0 12px 0;
+    transition: color 0.3s ease;
+
+    .language-card:hover &,
+    .language-card.active & {
+      color: $Green;
+    }
+  }
+
+  .language-level {
+    display: inline-block;
+    color: $Green;
+    font-size: 14px;
+    font-family: $CodeFont;
+    background: rgba(100, 255, 218, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    transition: all 0.3s ease;
+
+    &.native {
+      background: rgba(100, 255, 218, 0.15);
+      border-color: rgba(100, 255, 218, 0.4);
+      font-weight: 600;
+    }
+
+    .language-card:hover &,
+    .language-card.active & {
+      background: rgba(100, 255, 218, 0.2);
+      border-color: $Green;
+    }
+  }
+
+  // Proficiency Visual (Circle)
+  .proficiency-visual {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 32px;
+
+    .circle-svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    .circle-progress {
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+                  filter 0.5s ease;
+    }
+
+    .percentage-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .percentage-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: $Green;
+      font-family: $CodeFont;
+    }
+
+    .percentage-symbol {
+      font-size: 18px;
+      color: $Green;
+      font-family: $CodeFont;
+      opacity: 0.8;
+    }
+  }
+
+  // Progress Bar Section
+  .progress-section {
+    margin-top: 24px;
+  }
+
+  .progress-bar-container {
+    position: relative;
+    height: 8px;
+    margin-bottom: 8px;
+  }
+
+  .progress-bar-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $Navy;
+    border-radius: 10px;
+  }
+
+  .progress-bar-fill {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(90deg, $Green 0%, lighten($Green, 15%) 100%);
+    border-radius: 10px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+
+    .progress-shimmer {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+      );
+      animation: shimmer 2s infinite;
+    }
+  }
+
+  .proficiency-label {
+    text-align: center;
+    color: $Slate;
+    font-size: 12px;
+    font-family: $CodeFont;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  // Decorative Particles
+  .particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: $Green;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &.particle-1 {
+      top: 20px;
+      right: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    &.particle-2 {
+      bottom: 30px;
+      left: 30px;
+      animation: float 4s ease-in-out infinite 0.5s;
+    }
+
+    &.particle-3 {
+      top: 50%;
+      right: 30px;
+      animation: float 3.5s ease-in-out infinite 1s;
+    }
+  }
+
+  // Decorative Blurs
+  .decorative-blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    opacity: 0.3;
+
+    &.blur-1 {
+      top: 10%;
+      left: 5%;
+      width: 400px;
+      height: 400px;
+      background: rgba(100, 255, 218, 0.08);
+    }
+
+    &.blur-2 {
+      bottom: 20%;
+      right: 10%;
+      width: 350px;
+      height: 350px;
+      background: rgba(100, 255, 218, 0.06);
+    }
+
+    &.blur-3 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: rgba(100, 255, 218, 0.04);
+    }
+  }
+}
+
+// Animations
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

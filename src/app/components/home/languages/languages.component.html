@@ -1,0 +1,104 @@
+<section class="languages-section" id="languages">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header" @fadeInUp>
+      <div class="header-content">
+        <span class="section-number">04.</span>
+        <h2 class="section-title">{{ 'Languages.Title' | translate }}</h2>
+        <div class="title-line"></div>
+      </div>
+    </div>
+
+    <!-- Languages Grid -->
+    <div class="languages-grid">
+      <div *ngFor="let lang of 'Languages.Items' | translate; let i = index" 
+           class="language-card"
+           [class.active]="activeIndex === i"
+           [@cardAnimation]
+           (mouseenter)="setActive(i)"
+           (mouseleave)="clearActive()">
+        
+        <!-- Background Glow -->
+        <div class="card-glow"></div>
+        
+        <!-- Card Content -->
+        <div class="card-inner">
+     
+
+          <!-- Language Header -->
+          <div class="language-header">
+            <h3 class="language-name">{{ lang.Language }}</h3>
+            <span class="language-level" [class.native]="lang.Level === 'Native'">
+              {{ lang.Level }}
+            </span>
+          </div>
+
+          <!-- Proficiency Circle -->
+          <div class="proficiency-visual">
+            <svg class="circle-svg" viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="gradient-{{i}}" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#64ffda;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#64ffda;stop-opacity:0.6" />
+                </linearGradient>
+              </defs>
+              <!-- Background Circle -->
+              <circle
+                class="circle-bg"
+                cx="60"
+                cy="60"
+                r="52"
+                fill="none"
+                stroke="#0a192f"
+                stroke-width="8"
+              />
+              <!-- Progress Circle -->
+              <circle
+                class="circle-progress"
+                cx="60"
+                cy="60"
+                r="52"
+                fill="none"
+                [attr.stroke]="'url(#gradient-' + i + ')'"
+                stroke-width="8"
+                stroke-linecap="round"
+                [style.stroke-dasharray]="326.73"
+                [style.stroke-dashoffset]="326.73 - (326.73 * lang.Proficiency / 100)"
+              />
+            </svg>
+            <div class="percentage-text">
+              <span class="percentage-number">{{ lang.Proficiency }}</span>
+              <span class="percentage-symbol">%</span>
+            </div>
+          </div>
+
+          <!-- Progress Bar Alternative -->
+          <div class="progress-section">
+            <div class="progress-bar-container">
+              <div class="progress-bar-track"></div>
+              <div class="progress-bar-fill" [style.width.%]="lang.Proficiency">
+                <div class="progress-shimmer"></div>
+              </div>
+            </div>
+            <div class="proficiency-label">Proficiency</div>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="particle particle-1"></div>
+          <div class="particle particle-2"></div>
+          <div class="particle particle-3"></div>
+        </div>
+
+        <!-- Card Border Effect -->
+        <div class="card-border"></div>
+      </div>
+    </div>
+
+    <!-- Decorative Background Elements -->
+    <div class="decorative-blur blur-1"></div>
+    <div class="decorative-blur blur-2"></div>
+    <div class="decorative-blur blur-3"></div>
+  </div>
+</section>
+
+

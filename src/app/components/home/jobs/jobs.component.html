@@ -1,0 +1,244 @@
+<section class="section experience-section" id="jobs">
+  <div class="container">
+    <div class="section-box">
+      
+      <!-- Title -->
+      <div class="about-title mb-5" data-animate="slideInUp" data-animate-duration="1000">
+        <h3 class="e-font section-title">
+          <span class="code-font n-section-title">02.</span>
+          {{ "Experience.Title" | translate }}
+        </h3>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="experience-timeline">
+        
+        <div 
+          class="experience-item" 
+          *ngFor="let job of 'Experience.Jobs' | translate; let i = index"
+          [class.reverse]="i % 2 !== 0"
+          data-animate="fadeInUp"
+          [attr.data-animate-delay]="200 + (i * 100)">
+          
+          <!-- Media Section -->
+          <div class="experience-media">
+            <div class="media-container">
+              <div class="media-placeholder" [style.background]="getGradient(i)">
+                <div class="company-logo">
+                  <span>{{ job.Tab }}</span>
+                </div>
+              </div>
+              <div class="media-overlay"></div>
+            </div>
+          </div>
+
+          <!-- Content Section -->
+          <div class="experience-content">
+            <div class="content-inner">
+              
+              <!-- Company Badge -->
+              <div class="company-badge">
+                <span class="badge-dot"></span>
+                <span class="company-name">{{ job.Tab }}</span>
+              </div>
+
+              <!-- Job Title -->
+              <h3 class="job-title">{{ job.Title }}</h3>
+
+              <!-- Date -->
+              <div class="job-meta">
+                <span class="job-date">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                  {{ job.Date }}
+                </span>
+              </div>
+
+              <!-- Description -->
+              <ul class="job-highlights">
+                <li *ngFor="let desc of job.Description; let j = index"
+                    data-animate="fadeInLeft"
+                    [attr.data-animate-delay]="400 + (j * 100)">
+                  <span class="highlight-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </span>
+                  <span [innerHTML]="desc"></span>
+                </li>
+              </ul>
+
+              <!-- Technologies -->
+              <div class="job-tech" *ngIf="job.Technologies">
+                <span class="tech-tag" *ngFor="let tech of job.Technologies">{{ tech }}</span>
+              </div>
+
+              <!-- View Details Button -->
+              <button class="view-details-btn" (click)="openModal(job, i)">
+                <span>View Details</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Background Decoration -->
+  <div class="bg-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="experience-modal" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-overlay"></div>
+  <div class="modal-container" (click)="$event.stopPropagation()" [@modalAnimation]>
+  
+    <button class="modal-close" (click)="closeModal()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+
+    <div class="modal-content" *ngIf="selectedJob">
+      <div class="modal-header">
+        <div class="modal-header-top">
+          <div class="modal-company-badge">
+            <span class="badge-dot"></span>
+            <span>{{ selectedJob.Tab }}</span>
+          </div>
+          <div class="modal-date">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span>{{ selectedJob.Date }}</span>
+          </div>
+        </div>
+        <h2 class="modal-title">{{ selectedJob.Title }}</h2>
+        <!-- Support both lowercase 'overview' and uppercase 'Overview' -->
+        <p class="modal-overview" *ngIf="selectedJob.overview">
+          {{ selectedJob.overview.description }}
+        </p>
+        <p class="modal-overview" *ngIf="selectedJob.Overview">
+          {{ selectedJob.Overview.Description }}
+        </p>
+      </div>
+
+      <!-- Screenshot Gallery -->
+      <div class="screenshot-gallery" *ngIf="getScreenshots().length > 0">
+        <div class="gallery-main">
+          <div class="screenshot-container">
+            <img 
+              [src]="getScreenshots()[currentScreenshotIndex]" 
+              [alt]="'Screenshot ' + (currentScreenshotIndex + 1)"
+              class="screenshot-image">
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button class="gallery-nav prev" (click)="previousScreenshot()" *ngIf="getScreenshots().length > 1">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+
+          <button class="gallery-nav next" (click)="nextScreenshot()" *ngIf="getScreenshots().length > 1">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+
+          <!-- Screenshot Counter -->
+          <div class="screenshot-counter" *ngIf="getScreenshots().length > 1">
+            <span class="current">{{ currentScreenshotIndex + 1 }}</span>
+            <span class="separator">/</span>
+            <span class="total">{{ getScreenshots().length }}</span>
+          </div>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="gallery-thumbnails" *ngIf="getScreenshots().length > 1">
+          <div 
+            class="thumbnail" 
+            *ngFor="let screenshot of getScreenshots(); let idx = index"
+            [class.active]="idx === currentScreenshotIndex"
+            (click)="goToScreenshot(idx)">
+            <img [src]="screenshot" [alt]="'Thumbnail ' + (idx + 1)">
+            <div class="thumbnail-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Metrics - Support both lowercase and uppercase -->
+      <div class="metrics-grid" *ngIf="selectedJob.keyMetrics || selectedJob.KeyMetrics">
+        <div class="metric-card" *ngFor="let metric of selectedJob.keyMetrics || selectedJob.KeyMetrics">
+          <span class="metric-value">{{ metric.value || metric.Value }}</span>
+          <span class="metric-label">{{ metric.label || metric.Label }}</span>
+        </div>
+      </div>
+
+      <div class="modal-body-layout">
+        <div class="modal-main-col">
+          <!-- Modules Section (for jobs with Modules field) -->
+          <div class="modal-section" *ngIf="selectedJob.Modules">
+            <h3 class="modal-section-title">Key Modules</h3>
+            <div class="contribution-item" *ngFor="let item of selectedJob.Modules">
+               <h4 class="contrib-title">
+                 <span class="dot"></span> {{ item.Title }}
+               </h4>
+               <p>{{ item.Description }}</p>
+            </div>
+          </div>
+
+          <!-- Contributions Section (for jobs with contributions field) -->
+          <div class="modal-section" *ngIf="selectedJob.contributions">
+            <h3 class="modal-section-title">Key Contributions</h3>
+            <div class="contribution-item" *ngFor="let item of selectedJob.contributions">
+               <h4 class="contrib-title">
+                 <span class="dot"></span> {{ item.title }}
+               </h4>
+               <p>{{ item.description }}</p>
+               <ul class="mini-list" *ngIf="item.highlights">
+                 <li *ngFor="let high of item.highlights">{{ high }}</li>
+               </ul>
+            </div>
+          </div>
+
+          <!-- Impact & Results Section - Support both lowercase and uppercase -->
+          <div class="modal-section" *ngIf="selectedJob.results || selectedJob.Results">
+            <h3 class="modal-section-title">Impact & Results</h3>
+            <ul class="results-list">
+              <li *ngFor="let result of selectedJob.results || selectedJob.Results">{{ result }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modal-side-col">
+          <div class="modal-section">
+            <h3 class="modal-section-title">Technologies</h3>
+            <!-- Display Technologies as a simple list -->
+            <div class="tech-tags" *ngIf="selectedJob.Technologies">
+              <span class="tag" *ngFor="let tech of selectedJob.Technologies">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
