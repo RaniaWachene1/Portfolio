@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "andresjosehr-portfolio": {
+        "raniawachene-portfolio": {
             "projectType": "application",
             "schematics": {},
             "root": "",
@@ -20,7 +20,7 @@
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
                         "outputPath": {
-                          "base": "dist/andresjosehr-portfolio"
+                          "base": "dist/raniawachene-portfolio"
                         },
                         "index": "src/index.html",
                         "polyfills": [
@@ -31,7 +31,9 @@
                             "src/favicon.ico",
                             "src/assets",
                             "src/manifest.webmanifest",
-                            "src/.htaccess"
+                            "src/.htaccess",
+                            "src/CNAME",
+                            "src/.nojekyll"
                         ],
                         "styles": [
                             "node_modules/@fortawesome/fontawesome-free/css/all.css",
@@ -70,8 +72,8 @@
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "6kb",
-                                    "maximumError": "10kb"
+                                    "maximumWarning": "25kb",
+                                    "maximumError": "50kb"
                                 }
                             ],
                             "serviceWorker": "ngsw-config.json"
@@ -82,18 +84,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                      "buildTarget": "andresjosehr-portfolio:build"
+                      "buildTarget": "raniawachene-portfolio:build"
                     },
                     "configurations": {
                         "production": {
-                          "buildTarget": "andresjosehr-portfolio:build:production"
+                          "buildTarget": "raniawachene-portfolio:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                      "buildTarget": "andresjosehr-portfolio:build"
+                      "buildTarget": "raniawachene-portfolio:build"
                     }
                 },
                 "test": {
@@ -131,13 +133,16 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "andresjosehr-portfolio:serve"
+                        "devServerTarget": "raniawachene-portfolio:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "andresjosehr-portfolio:serve:production"
+                            "devServerTarget": "raniawachene-portfolio:serve:production"
                         }
                     }
+                },
+                "deploy": {
+                  "builder": "angular-cli-ghpages:deploy"
                 }
             }
         }
