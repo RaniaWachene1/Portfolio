@@ -1,10 +1,11 @@
 {
-  "Header.Item1": "About Me",
+"Header.Item1": "About Me",
   "Header.Item2": "Experience",
   "Header.Item3": "Projects",
   "Header.Item4": "Contact",
   "Header.Item5": "Education",
   "Header.Item6": "Languages",
+  "Header.Item7": "Certifications",
   "Header.cvBtn": "Resume",
   "Header.cvName": "CV_Rania_Wachene_English.pdf",
   "Loading": "Loading...",
@@ -19,7 +20,236 @@
     "I am passionate about building scalable and secure applications while implementing automation, robust monitoring, and Site Reliability Engineering (SRE) practices to ensure high system availability and performance.",
     "<span class='underline'> Some of the technologies I have worked with extensively include:</span>"
   ],
-
+ "Certifications.Title": "Certifications",
+  "Certifications.Items": [
+    {
+      "name": "Microsoft Certified: Azure AI Fundamentals",
+      "provider": "Microsoft",
+      "logo": "assets/images/certifications/microsoft-azure.jpg",
+      "description": "Demonstrates foundational knowledge of machine learning and artificial intelligence concepts and related Microsoft Azure services.",
+      "skills": [
+        "Azure AI",
+        "Machine Learning",
+        "Computer Vision",
+        "NLP",
+        "Cognitive Services"
+      ],
+      "issueDate": "January 2025",
+      "expiryDate": "January 2026",
+      "credentialId": "ABC123XYZ789",
+      "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/YourName/ABC123XYZ789",
+      "isActive": true,
+      "details": {
+        "learningOutcomes": [
+          "Describe Artificial Intelligence workloads and considerations",
+          "Describe fundamental principles of machine learning on Azure",
+          "Describe features of computer vision workloads on Azure",
+          "Describe features of Natural Language Processing (NLP) workloads on Azure",
+          "Describe features of conversational AI workloads on Azure"
+        ],
+        "keyTopics": [
+          "AI Workloads",
+          "Machine Learning Models",
+          "Computer Vision",
+          "Natural Language Processing",
+          "Conversational AI",
+          "Azure Cognitive Services",
+          "Responsible AI",
+          "Azure Machine Learning"
+        ]
+      }
+    },
+    {
+      "name": "Microsoft Certified: Azure Fundamentals",
+      "provider": "Microsoft",
+      "logo": "assets/images/certifications/microsoft-azure.jpg",
+      "description": "Validates foundational knowledge of cloud services and how those services are provided with Microsoft Azure.",
+      "skills": [
+        "Azure",
+        "Cloud Computing",
+        "IaaS",
+        "PaaS",
+        "SaaS",
+        "Cloud Security"
+      ],
+      "issueDate": "December 2024",
+      "credentialId": "AZ900-2024-123",
+      "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/YourName/AZ900-2024-123",
+      "isActive": true,
+      "details": {
+        "learningOutcomes": [
+          "Describe cloud concepts",
+          "Describe Azure architecture and services",
+          "Describe Azure management and governance",
+          "Understand cloud service types and deployment models",
+          "Describe core Azure services and solutions"
+        ],
+        "keyTopics": [
+          "Cloud Computing Concepts",
+          "Azure Architecture",
+          "Compute Services",
+          "Networking Services",
+          "Storage Services",
+          "Identity & Access",
+          "Security & Compliance",
+          "Cost Management",
+          "Service Level Agreements"
+        ]
+      }
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "provider": "Amazon Web Services",
+      "logo": "assets/images/certifications/aws-cloud-practitioner.png",
+      "description": "Validates overall understanding of the AWS Cloud, independent of specific technical roles.",
+      "skills": [
+        "AWS",
+        "Cloud Concepts",
+        "Security",
+        "Technology",
+        "Billing & Pricing"
+      ],
+      "issueDate": "November 2024",
+      "expiryDate": "November 2027",
+      "credentialId": "AWS-CP-2024-456",
+      "credentialUrl": "https://www.credly.com/badges/your-badge-id",
+      "isActive": true,
+      "details": {
+        "learningOutcomes": [
+          "Define what the AWS Cloud is and the basic global infrastructure",
+          "Describe basic AWS Cloud architectural principles",
+          "Describe the AWS Cloud value proposition",
+          "Describe key services on the AWS platform",
+          "Describe basic security and compliance aspects of the AWS platform"
+        ],
+        "keyTopics": [
+          "Cloud Concepts",
+          "AWS Global Infrastructure",
+          "EC2 & Compute Services",
+          "Storage Services (S3, EBS)",
+          "Database Services (RDS, DynamoDB)",
+          "Networking (VPC, Route 53)",
+          "IAM & Security",
+          "Cost Optimization",
+          "AWS Well-Architected Framework"
+        ]
+      }
+    },
+    {
+      "name": "Certified Kubernetes Administrator (CKA)",
+      "provider": "Cloud Native Computing Foundation",
+      "logo": "assets/images/certifications/cka.png",
+      "description": "Demonstrates the ability to perform the responsibilities of a Kubernetes administrator.",
+      "skills": [
+        "Kubernetes",
+        "Container Orchestration",
+        "Cloud Native",
+        "DevOps",
+        "Cluster Management"
+      ],
+      "issueDate": "October 2024",
+      "expiryDate": "October 2027",
+      "credentialId": "CKA-2024-789",
+      "credentialUrl": "https://www.credly.com/badges/your-cka-badge",
+      "isActive": true,
+      "details": {
+        "learningOutcomes": [
+          "Perform installation and configuration of Kubernetes clusters",
+          "Manage cluster architecture, installation, and configuration",
+          "Understand and apply workloads and scheduling",
+          "Implement services and networking",
+          "Manage storage and troubleshoot clusters"
+        ],
+        "keyTopics": [
+          "Cluster Architecture",
+          "Workloads & Scheduling",
+          "Services & Networking",
+          "Storage Management",
+          "Troubleshooting",
+          "Security",
+          "kubectl Commands",
+          "YAML Configurations",
+          "Pod Lifecycle"
+        ]
+      }
+    },
+    {
+      "name": "HashiCorp Certified: Terraform Associate",
+      "provider": "HashiCorp",
+      "logo": "assets/images/certifications/terraform.png",
+      "description": "Validates practical knowledge of the Terraform open source version and cloud automation skills.",
+      "skills": [
+        "Terraform",
+        "Infrastructure as Code",
+        "Cloud Automation",
+        "DevOps",
+        "IaC"
+      ],
+      "issueDate": "September 2024",
+      "expiryDate": "September 2026",
+      "credentialId": "TF-ASSOC-2024-321",
+      "credentialUrl": "https://www.credly.com/badges/your-terraform-badge",
+      "isActive": true,
+      "details": {
+        "learningOutcomes": [
+          "Understand Infrastructure as Code (IaC) concepts",
+          "Understand Terraform's purpose and benefits",
+          "Navigate Terraform workflow (Write, Plan, Apply)",
+          "Interact with Terraform modules",
+          "Use Terraform outside of core workflow"
+        ],
+        "keyTopics": [
+          "IaC Concepts",
+          "Terraform Basics",
+          "Configuration Language",
+          "State Management",
+          "Modules",
+          "Providers",
+          "Variables & Outputs",
+          "Resource Dependencies",
+          "Terraform Cloud"
+        ]
+      }
+    },
+    {
+      "name": "Docker Certified Associate",
+      "provider": "Docker",
+      "logo": "assets/images/certifications/docker.png",
+      "description": "Validates skills in containerization and Docker platform expertise.",
+      "skills": [
+        "Docker",
+        "Containers",
+        "Microservices",
+        "DevOps",
+        "Container Security"
+      ],
+      "issueDate": "August 2024",
+      "expiryDate": "August 2026",
+      "credentialId": "DCA-2024-654",
+      "credentialUrl": "https://credentials.docker.com/your-credential",
+      "isActive": true,
+      "details": {
+        "learningOutcomes": [
+          "Understand Docker architecture and components",
+          "Work with Docker images and containers",
+          "Implement Docker networking and storage",
+          "Orchestrate containers using Docker Swarm",
+          "Apply Docker security best practices"
+        ],
+        "keyTopics": [
+          "Docker Architecture",
+          "Image Management",
+          "Container Lifecycle",
+          "Networking",
+          "Storage & Volumes",
+          "Docker Compose",
+          "Docker Swarm",
+          "Security",
+          "Registry Management"
+        ]
+      }
+    }
+  ],
 
   "Experience.Title": "Experience",
   "Experience.Jobs": [
@@ -315,6 +545,124 @@
   "FeatureProjects.Title": "Highlighted Projects",
   "FeatureProjects.Label": "Featured Project",
   "FeatureProjects.Projects": [
+    {
+          "Title": "Private Cloud Infrastructure with OpenStack",
+      "Description": "Built a production-grade private cloud from scratch using OpenStack, integrated with Docker and Kubernetes to demonstrate modern cloud-native platform architecture on IaaS.",
+      "imgs": [
+        "assets/images/openstack/1.png",
+        "assets/images/openstack/2.png",
+        "assets/images/openstack/3.png"
+      ],
+      "Technologies": [
+        "OpenStack",
+        "Nova",
+        "Neutron",
+        "Keystone",
+        "Glance",
+        "Cinder",
+        "Swift",
+        "Heat",
+        "Horizon",
+        "Docker",
+        "Kubernetes",
+        "Linux",
+        "KVM"
+      ],
+      "ghLink": "",
+      "demoLink": "",
+      "keyMetrics": [
+        {
+          "value": "100%",
+          "label": "Private Infrastructure"
+        },
+        {
+          "value": "Full Stack",
+          "label": "IaaS Deployment"
+        },
+        {
+          "value": "Cloud Native",
+          "label": "K8s Integration"
+        }
+      ],
+      "overview": {
+        "description": "Deployed a complete private cloud infrastructure using OpenStack, working directly with compute, networking, storage, identity, and orchestration services. Integrated with Docker and Kubernetes to demonstrate how modern cloud-native platforms run on top of IaaS."
+      },
+      "technicalStack": {
+        "OpenStack Core Services": [
+          "Nova (Compute)",
+          "Neutron (Networking)",
+          "Keystone (Identity & Authentication)",
+          "Glance (Image Service)",
+          "Cinder (Block Storage)",
+          "Swift (Object Storage)",
+          "Heat (Orchestration)",
+          "Horizon (Dashboard)"
+        ],
+        "Container Platform": [
+          "Docker (Containerization)",
+          "Kubernetes (Orchestration)"
+        ],
+        "Infrastructure": [
+          "KVM Hypervisor",
+          "Linux",
+          "Software-Defined Networking",
+          "Distributed Storage"
+        ]
+      },
+      "pipelineFeatures": [
+        {
+          "title": "OpenStack Infrastructure Deployment",
+          "description": "Built complete IaaS platform with all core OpenStack services working together.",
+          "highlights": [
+            "Nova for VM lifecycle management and compute scheduling",
+            "Neutron for software-defined networking and network isolation",
+            "Keystone for centralized identity and authentication",
+            "Glance for VM image management and distribution",
+            "Cinder and Swift for persistent block and object storage",
+            "Heat for infrastructure orchestration and automation",
+            "Horizon dashboard for web-based management"
+          ]
+        },
+        {
+          "title": "Cloud-Native Integration",
+          "description": "Deployed containerized workloads on OpenStack infrastructure.",
+          "highlights": [
+            "Docker containers running on OpenStack VMs",
+            "Kubernetes cluster deployed on Nova instances",
+            "Container orchestration on private cloud infrastructure",
+            "Demonstrated IaaS to PaaS evolution"
+          ]
+        },
+        {
+          "title": "Network & Storage Architecture",
+          "description": "Implemented enterprise-grade networking and storage solutions.",
+          "highlights": [
+            "Virtual networks with Neutron SDN",
+            "Floating IPs and security groups",
+            "Multi-tenant network isolation",
+            "Distributed block and object storage",
+            "Snapshot and backup capabilities"
+          ]
+        },
+        {
+          "title": "Service Integration & Orchestration",
+          "description": "Automated infrastructure provisioning with Heat templates.",
+          "highlights": [
+            "Infrastructure as Code with Heat",
+            "Automated VM provisioning and configuration",
+            "Template-based resource orchestration",
+            "Complete service integration across all OpenStack components"
+          ]
+        }
+      ],
+      "results": [
+        "Gained deep understanding of how cloud services interact behind the scenes",
+        "Mastered the complete VM lifecycle from authentication to scheduling, networking, storage, and launch",
+        "Demonstrated how OpenStack, Docker, and Kubernetes work together in real-world cloud architectures",
+        "Built foundation for understanding public cloud platforms like AWS, Azure, and Google Cloud",
+        "Developed expertise in private cloud infrastructure and IaaS management"
+      ]
+    },
     {
       "Title": "SnowMountain",
       "Description": "Ski management platform featuring a fully automated DevSecOps CI/CD pipeline integrating automation, security, and cloud orchestration.",

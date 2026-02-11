@@ -18,6 +18,7 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CertifComponent } from './components/home/certif/certif.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -25,7 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({ declarations: [
         AppComponent,
-        /* ArchiveComponent */
+        
     ],
     bootstrap: [AppComponent], imports: [BrowserAnimationsModule,
         HomeModule,

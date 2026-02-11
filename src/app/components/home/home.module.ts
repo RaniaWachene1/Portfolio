@@ -15,6 +15,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GeneralModule } from '../general/general.module';
 import { EducationComponent } from './education/education.component';
 import { LanguagesComponent } from './languages/languages.component';
+import { CertifComponent } from './certif/certif.component';
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient){
     MoreProyectsComponent,
     ContactComponent,
       EducationComponent,
-    LanguagesComponent
+    LanguagesComponent,
+    CertifComponent
   ],
   imports: [
     CommonModule,

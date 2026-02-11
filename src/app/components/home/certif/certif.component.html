@@ -1,0 +1,178 @@
+<section class="certifications-section" id="certif">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-number">05.</span>
+        {{ 'Certifications.Title' | translate }}
+      </h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="cert-stats">
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="stat-value">{{ getTotalCertifications() }}</div>
+        <div class="stat-label">Professional Certifications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </div>
+        <div class="stat-value">{{ getActiveCertifications() }}</div>
+        <div class="stat-label">Active Credentials</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="stat-value">{{ getProviderCount() }}</div>
+        <div class="stat-label">Trusted Providers</div>
+      </div>
+    </div>
+
+    <!-- Certifications Horizontal Scroll -->
+    <div class="certifications-scroll-container">
+      <!-- Left Arrow -->
+      <button class="scroll-arrow scroll-arrow-left" (click)="scrollLeft()" aria-label="Scroll left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Right Arrow -->
+      <button class="scroll-arrow scroll-arrow-right" (click)="scrollRight()" aria-label="Scroll right">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="certifications-scroll" #certificationsScroll>
+        <div 
+          *ngFor="let cert of certifications; let i = index" 
+          class="cert-card"
+          [@cardAnimation]>
+          
+          <!-- Certificate Image -->
+          <div class="cert-visual">
+            <div class="cert-image-container">
+              <div class="image-glow"></div>
+              <img [src]="cert.logo" [alt]="cert.name" class="cert-image">
+              <div class="cert-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+            </div>
+          </div>
+
+          <!-- Certificate Details -->
+          <div class="cert-details">
+            <!-- Header -->
+            <div class="cert-header">
+              <div class="cert-provider">
+                <span class="provider-dot"></span>
+                <span class="provider-text">{{ cert.provider }}</span>
+              </div>
+              <div class="cert-status" [class.active]="cert.isActive">
+                <span>{{ cert.isActive ? 'ACTIVE' : 'EXPIRED' }}</span>
+              </div>
+            </div>
+
+            <!-- Certificate Name -->
+            <h3 class="cert-title">{{ cert.name }}</h3>
+
+            <!-- Description -->
+            <p class="cert-description">{{ cert.description }}</p>
+
+            <!-- Skills/Technologies -->
+            <div class="cert-skills">
+              <span 
+                *ngFor="let skill of cert.skills" 
+                class="skill-tag">
+                {{ skill }}
+              </span>
+            </div>
+
+            <!-- Meta Information -->
+            <div class="cert-info-grid">
+              <div class="info-box">
+                <div class="info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <div class="info-label">Issue Date</div>
+                  <div class="info-value">{{ cert.issueDate }}</div>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <div class="info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <div class="info-label">Expiry</div>
+                  <div class="info-value">{{ cert.expiryDate }}</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Credential ID (if exists) -->
+            <div class="credential-id-box" *ngIf="cert.credentialId">
+              <div class="credential-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                Credential ID
+              </div>
+              <div class="credential-value">{{ cert.credentialId }}</div>
+            </div>
+
+            <!-- Verification Button -->
+            <a 
+              [href]="cert.credentialUrl" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="verify-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>Verify Credential</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        <span>Scroll to see more</span>
+      </div>
+    </div>
+  </div>
+</section>
