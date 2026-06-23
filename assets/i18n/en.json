@@ -100,7 +100,7 @@
     {
       "name": "AWS Certified Cloud Practitioner",
       "provider": "Amazon Web Services",
-      "logo": "assets/images/certifications/aws-cloud-practitioner.png",
+      "logo": "assets/images/certifications/aws-crt.png",
       "description": "Validates overall understanding of the AWS Cloud, independent of specific technical roles.",
       "skills": [
         "AWS",
