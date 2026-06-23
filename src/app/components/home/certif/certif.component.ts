@@ -60,6 +60,18 @@ export class CertifComponent implements OnInit {
   loadCertifications(): void {
     this.certifications = [
       {
+        name: 'AWS Certified Cloud Practitioner',
+        provider: 'Amazon Web Services',
+        logo: 'assets/images/certifications/aws-crt.png',
+        description: 'Validates overall understanding of the AWS Cloud — including core services, security, architecture, pricing, and support — independent of specific technical roles.',
+        skills: ['AWS', 'Cloud Concepts', 'EC2', 'S3', 'IAM', 'Security', 'Billing & Pricing'],
+        issueDate: 'November 2024',
+        expiryDate: 'November 2027',
+        credentialId: '',
+        credentialUrl: 'https://www.credly.com/users/rania-wachene/badges#credly',
+        isActive: true
+      },
+      {
         name: 'Microsoft Certified: Azure AI Fundamentals',
         provider: 'Microsoft',
         logo: 'assets/images/certifications/microsoft-azure-ai.jpg',
